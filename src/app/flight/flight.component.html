@@ -1,0 +1,54 @@
+<!--
+  Flight information
+-->
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="form-row">
+    <div class="form-group col-md-4 offset-md-2 mb-3">
+      <label>Origin Airport: </label>
+      <select class = "form-control" name="origin" [(ngModel)]="model.originAirport">
+        <option value="">Select an Origin</option>
+        <option *ngFor="let airport of Airport.sort()" [value]="airport">
+          {{airport}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-4 mb-3">
+      <label>Destination Airport: </label>
+      <select class = "form-control" name="destination" [(ngModel)]="model.destinationAirport">
+        <option value="">Select an Destination</option>
+        <option *ngFor="let airport of Airport.sort()" [value]="airport">
+          {{airport}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3 offset-md-2 mb-3">
+      <label>Travel Date: </label>
+      <input type="date" class="form-control" name="date" [(ngModel)]="model.flightDate">
+    </div>
+
+    <div class="form-group col-md-3 mb-3">
+      <label>Passengers: </label>
+      <input type="number" class="form-control" min="1" max="999" name="passengers" [(ngModel)]="model.passengers">
+    </div>
+
+    <div class="form-group col-md-3">
+      <label>Price: </label>
+      {{model.passengers * 150 | currency}}
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-4 offset-md-4">
+      <button class="btn btn-primary btn-block">Submit</button>
+    </div>
+  </div>
+
+
+</form>
