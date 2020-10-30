@@ -3,6 +3,8 @@
 -->
 
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+  <!-- Origin Airport -->
   <div class="form-row">
     <div class="form-group col-md-4 offset-md-2 mb-3">
       <label>Origin Airport: </label>
@@ -14,6 +16,7 @@
       </select>
     </div>
 
+    <!-- Destination Airport -->
     <div class="form-group col-md-4 mb-3">
       <label>Destination Airport: </label>
       <select class = "form-control" name="destination" [(ngModel)]="model.destinationAirport">
@@ -25,17 +28,20 @@
     </div>
   </div>
 
+  <!-- Travel Date-->
   <div class="form-row">
     <div class="form-group col-md-3 offset-md-2 mb-3">
       <label>Travel Date: </label>
       <input type="date" class="form-control" name="date" [(ngModel)]="model.flightDate">
     </div>
 
+    <!-- Passengers -->
     <div class="form-group col-md-3 mb-3">
       <label>Passengers: </label>
       <input type="number" class="form-control" min="1" max="999" name="passengers" [(ngModel)]="model.passengers">
     </div>
 
+    <!--  Price-->
     <div class="form-group col-md-3">
       <label>Price: </label>
       {{model.passengers * 150 | currency}}
