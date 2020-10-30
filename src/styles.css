@@ -5,6 +5,7 @@
   background-color: transparent;
 }
 
+/*
 body {
   background-image: url("../src/images/background_img.jpg");
   background-position: center;
@@ -13,4 +14,9 @@ body {
   background-repeat: no-repeat;
   color: white;
   padding-top: 250px;
+}
+*/
+
+body {
+  background-color: lightblue;
 }
